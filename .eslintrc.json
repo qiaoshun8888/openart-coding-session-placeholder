@@ -1,0 +1,65 @@
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "es2021": true
+  },
+  "extends": [
+    "next",
+    "plugin:import/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/typescript",
+    "prettier"
+  ],
+  "plugins": [
+    "eslint-plugin-absolute-imports",
+    "unused-imports",
+    "@typescript-eslint"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "rules": {
+    // disable rules we are violating, we could review and fix them later
+    "import/no-anonymous-default-export": "off",
+    "@next/next/no-img-element": "off",
+    "react-hooks/exhaustive-deps": "off",
+    "react-hooks/rules-of-hooks": "off",
+    "react/no-unescaped-entities": "off",
+    "jsx-a11y/alt-text": "off",
+    // rules
+    "no-undef": "error",
+    "absolute-imports/only-absolute-imports": "error",
+    "unused-imports/no-unused-imports": "error",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "react/display-name": "off",
+    "import/namespace": "off",
+    "@typescript-eslint/no-var-requires": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": true,
+      "node": {
+        "extensions": [".js", ".ts", ".tsx"],
+        "moduleDirectory": ["web/"]
+      },
+      "alias": {
+        "map": [
+          ["@/minimals", "./minimals"],
+          ["@/components", "./lib/components"],
+          ["@/hooks", "./lib/hooks"],
+          ["@/utils", "./lib/utils"]
+        ],
+        "extensions": [".js", ".ts", ".tsx"]
+      }
+    }
+  },
+  "ignorePatterns": ["node_modules/*", ".next/*", "lib/type.js", "*.config.js"]
+}
