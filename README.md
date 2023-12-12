@@ -1,4 +1,4 @@
-# openart-coding-sessions
+# openart-coding-session-placeholder
 
 Install the dependencies and run the project
 
@@ -6,4 +6,3 @@ Install the dependencies and run the project
 yarn install
 yarn dev
 ```
-# openart-coding-session-placeholder
